@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encriptar</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="cajas">
+            <form action="">
+                    <textarea id="entrada" cols="30" rows="10">
+
+                    </textarea>
+                    <textarea id="salida" cols="30" rows="10">
+
+                    </textarea>
+            
+         </div>
+
+         <div class="botones">
+
+            <input id="encriptar"  type="button" value="Encriptar">
+            <input id ="desencriptar"type="button" value="Desencriptar">
+            <input type="button" value="Copiar">
+
+
+        </form>
+         </div>
+    </main>
+
+</body>
+</html>
+<Script>
+    var texto=document.getElementById("entrada");
+    var texto2=document.getElementById("salida");
+
+     var encriptar_mensaje=document.getElementById("encriptar");
+     var desencriptar_mensaje=document.getElementById("desencriptar");
+
+    function encriptar(mensaje){
+
+       
+
+        mensaje=mensaje.replace(/e/g,'enter');
+        mensaje=mensaje.replace(/i/g,'imes');
+        mensaje=mensaje.replace(/a/g,'ai');
+        mensaje=mensaje.replace(/o/g,'ober');
+        mensaje=mensaje.replace(/u/g,'ufat');
+
+
+
+        texto2.value=mensaje;
+
+        //console.log(mensaje);
+        //console.log(texto);
+
+    }
+
+    function desencriptar(mensaje){
+
+       
+
+                mensaje=mensaje.replace(/enter/g,'e');
+                mensaje=mensaje.replace(/imes/g,'i');
+                mensaje=mensaje.replace(/ai/g,'a');
+                mensaje=mensaje.replace(/ober/g,'o');
+                mensaje=mensaje.replace(/ufat/g,'u');
+
+
+
+                texto2.value=mensaje;
+
+//console.log(mensaje);
+//console.log(texto);
+
+}
+    
+    function mensaje(){
+
+        encriptar(texto.value);
+
+    }
+    function mensajeoculto(){
+
+        desencriptar(texto.value);
+
+        }
+
+     encriptar_mensaje.onclick=mensaje;
+     desencriptar_mensaje.onclick=mensajeoculto;
+
+    
+
+</Script>
